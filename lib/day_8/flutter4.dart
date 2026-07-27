@@ -8,7 +8,7 @@ class Flutter4 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Laporan & Riwayat Udara",
+          "Halo, Thania",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -23,7 +23,7 @@ class Flutter4 extends StatelessWidget {
             Center(
               child: Center(
                 child: Text(
-                  "Laporan Kondisi Udara",
+                  "Mix & Match",
                   style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
                 ),
               ),
@@ -32,8 +32,8 @@ class Flutter4 extends StatelessWidget {
 
             TextField(
               decoration: InputDecoration(
-                hintText: "Titik Lokasi (Nama Jalan/Gedung)",
-                prefixIcon: Icon(Icons.map),
+                hintText: "Cari pakaian....",
+                prefixIcon: Icon(Icons.search),
                 fillColor: Colors.grey.shade100,
                 filled: true,
                 border: OutlineInputBorder(
@@ -45,8 +45,8 @@ class Flutter4 extends StatelessWidget {
 
             TextField(
               decoration: InputDecoration(
-                hintText: "Skor AQI Teramati",
-                prefixIcon: Icon(Icons.air),
+                hintText: "Cuaca hari ini",
+                prefixIcon: Icon(Icons.sunny),
                 fillColor: Colors.grey.shade100,
                 filled: true,
                 border: OutlineInputBorder(
@@ -59,8 +59,8 @@ class Flutter4 extends StatelessWidget {
 
             TextField(
               decoration: InputDecoration(
-                hintText: "Nama Pelapor",
-                prefixIcon: Icon(Icons.person),
+                hintText: "Preferensi style",
+                prefixIcon: Icon(Icons.checkroom),
                 fillColor: Colors.grey.shade100,
                 filled: true,
                 border: OutlineInputBorder(
@@ -72,8 +72,8 @@ class Flutter4 extends StatelessWidget {
 
             TextField(
               decoration: InputDecoration(
-                hintText: "Catatan Tambahan",
-                prefixIcon: Icon(Icons.notes),
+                hintText: "Warna Favorit",
+                prefixIcon: Icon(Icons.palette_outlined),
                 fillColor: Colors.grey.shade100,
                 filled: true,
                 border: OutlineInputBorder(
@@ -86,7 +86,7 @@ class Flutter4 extends StatelessWidget {
             SizedBox(height: 10),
 
             Text(
-              "Riwayat Laporan Terakhir",
+              "Rekomendasi Outfit Hari ini",
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 15),
@@ -94,66 +94,64 @@ class Flutter4 extends StatelessWidget {
             ListTile(
               leading: CircleAvatar(
                 backgroundColor: Colors.red,
-                child: Icon(Icons.warning, color: Colors.white),
+                child: Icon(Icons.school, color: Colors.white),
               ),
               title: Text(
-                "Jakarta Pusat",
+                "Smart Campus",
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              subtitle: Text(
-                "AQI:156 - Tidak Sehat.\nDilaporkan 5 menit lalu.",
-              ),
+              subtitle: Text("Blazer Beige + Celana Cream\nCocok untuk Kuliah"),
               trailing: Icon(Icons.arrow_forward_ios),
             ),
 
             ListTile(
               leading: CircleAvatar(
                 backgroundColor: Colors.orange,
-                child: Icon(Icons.cloud, color: Colors.white),
+                child: Icon(Icons.coffee, color: Colors.white),
               ),
               title: Text(
-                "Bandung Kota",
+                "Casual Hangout",
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              subtitle: Text("AQI:95 - Sedang.\nDilaporkan 3 menit lalu"),
+              subtitle: Text("Kaos Putih + Jeans Biru\nCocok untuk Nongkrong"),
               trailing: Icon(Icons.arrow_forward_ios),
             ),
 
             ListTile(
               leading: CircleAvatar(
                 backgroundColor: Colors.green,
-                child: Icon(Icons.check_circle, color: Colors.white),
+                child: Icon(Icons.work, color: Colors.white),
               ),
               title: Text(
-                "Yogyakarta",
+                "Elegant Office",
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              subtitle: Text("AQI:42 - Baik.\nDilaporkan 1 hari lalu"),
+              subtitle: Text("Kemeja Putih + Rok Hitam\nCocok untuk Formal"),
               trailing: Icon(Icons.arrow_forward_ios),
             ),
 
             ListTile(
               leading: CircleAvatar(
                 backgroundColor: Colors.red,
-                child: Icon(Icons.masks, color: Colors.white),
+                child: Icon(Icons.flight, color: Colors.white),
               ),
               title: Text(
-                "Semarang",
+                "Travel Comfort",
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              subtitle: Text("AQI:120 - Sensitif.\nDilaporkan 1 hari lalu"),
+              subtitle: Text("Hoodie + Cargo Pants\nCocok untuk Traveling"),
               trailing: Icon(Icons.arrow_forward_ios),
             ),
           ],
