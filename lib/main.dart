@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_thania/day_8/tugas3.dart';
+import 'package:flutter_thania/day_8/flutter4.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Tugas3Flutter(),
+      home: Flutter4(),
     );
   }
 }
