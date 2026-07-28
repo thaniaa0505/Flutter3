@@ -1,0 +1,150 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const InteraksiFlutterApp());
+}
+
+class InteraksiFlutterApp extends StatelessWidget {
+  const InteraksiFlutterApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Interaksi Flutter',
+      home: const InteraksiPage(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class InteraksiPage extends StatefulWidget {
+  const InteraksiPage({super.key});
+
+  @override
+  State<InteraksiPage> createState() => _InteraksiPageState();
+}
+
+class _InteraksiPageState extends State<InteraksiPage> {
+  bool showSecret = false;
+  bool liked = false;
+  bool showDesc = false;
+  String inkWellMsg = '';
+  int counter = 25;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Interaksi Flutter'),
+        backgroundColor: Colors.blue,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // ElevatedButton
+            const Text('ini tentang ElevatedButton:'),
+            ElevatedButton(
+              onPressed: () {
+                setState(() => showSecret = !showSecret);
+              },
+              child: const Text('Klik Saya!'),
+            ),
+            if (showSecret) const Text('Halo, saya Developer!'),
+
+            const SizedBox(height: 20),
+
+            // IconButton
+            const Text('ini tentang IconButton:'),
+            IconButton(
+              icon: Icon(
+                Icons.favorite,
+                color: liked ? Colors.red : Colors.grey,
+              ),
+              onPressed: () {
+                setState(() => liked = !liked);
+              },
+            ),
+            Text(liked ? 'Tersimpan di Favorit' : 'Belum Disukai'),
+
+            const SizedBox(height: 20),
+
+            // TextButton
+            const Text('ini tentang TextButton:'),
+            TextButton(
+              onPressed: () {
+                setState(() => showDesc = !showDesc);
+              },
+              child: const Text('Lihat Deskripsi'),
+            ),
+            if (showDesc)
+              const Text(
+                'Ini adalah paragraf deskripsi tambahan yang muncul ketika tombol ditekan.',
+              ),
+
+            const SizedBox(height: 20),
+
+            // InkWell
+            const Text('ini tentang InkWell:'),
+            InkWell(
+              onTap: () {
+                setState(() => inkWellMsg = 'Sentuhan terdeteksi!');
+                print('Sentuhan terdeteksi!');
+              },
+              child: Container(
+                width: double.infinity,
+                height: 60,
+                color: Colors.blueAccent,
+                alignment: Alignment.center,
+                child: const Text(
+                  'Sentuh Kotak Ini',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            if (inkWellMsg.isNotEmpty) Text(inkWellMsg),
+
+            const SizedBox(height: 20),
+
+            // GestureDetector
+            const Text('ini tentang GestureDetector:'),
+            GestureDetector(
+              onTap: () {
+                setState(() => counter += 1);
+                print('Ditekan sekali');
+              },
+              onDoubleTap: () {
+                setState(() => counter += 2);
+                print('Ditekan dua kali');
+              },
+              onLongPress: () {
+                setState(() => counter += 3);
+                print('Tahan lama');
+              },
+              child: Container(
+                width: double.infinity,
+                height: 60,
+                color: Colors.orange,
+                alignment: Alignment.center,
+                child: Text(
+                  'Angka: $counter',
+                  style: const TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
+            const Text('• Tap = +1\n• Double Tap = +2\n• Long Press = +3'),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.purple,
+        onPressed: () {
+          setState(() => counter--);
+        },
+        child: const Icon(Icons.remove),
+      ),
+    );
+  }
+}
